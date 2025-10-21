@@ -72,7 +72,7 @@ app.post('/quiz', async (req, res) => {
     const prompt = buildPromptFromSections(sections);
 
     const response = await ai.models.generateContent({
-      model: 'gemini-2.5-flash',
+      model: 'gemini-2.0-flash-lite',
       contents: [{ role: 'user', parts: [{ text: prompt }] }],
       // generationConfig: { temperature: 0.4, maxOutputTokens: 2048 },
     });
@@ -119,6 +119,7 @@ app.get('/', (_req, res) => {
 app.listen(PORT, () => {
   console.log(`🚀 Server listening at http://localhost:${PORT}`);
 });
+
 
 
 
