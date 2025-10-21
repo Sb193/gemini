@@ -41,7 +41,7 @@ YÊU CẦU:
 - Chỉ trả về JSON THUẦN (không kèm chữ, không kèm markdown).
 DỮ LIỆU:`;
   const data = JSON.stringify(
-    sections.map(({ title, text }) => ({ title, text })),
+    sections.map(({ text }) => ({ text })),
     null,
     2
   );
@@ -119,5 +119,6 @@ app.get('/', (_req, res) => {
 app.listen(PORT, () => {
   console.log(`🚀 Server listening at http://localhost:${PORT}`);
 });
+
 
 
